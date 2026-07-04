@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陪跑计划 · 1对1带你建立自己的交易系统 | Joyce 高冷悦姐</title>
+<meta name="description" content="马来西亚合格认证交易员 Joyce 高冷悦姐 · 陪跑计划:1对1陪跑 + LIVE实盘带盘 + 专属学习App,陪跑到你独立交易为止。">
+<meta property="og:title" content="陪跑计划 · 1对1带你建立自己的交易系统">
+<meta property="og:description" content="不卖信号,不叫你跟单。LIVE 实盘手把手教,陪跑到你独立交易为止。">
+<!-- Meta Pixel: 需要时把 pixel 代码贴在这里 -->
+<style>
+@font-face{
+  font-family:'MiSans Heavy';
+  src:url('assets/misans-heavy-subset.woff2') format('woff2');
+  font-weight:900;font-display:swap;
+}
+:root{
+  --bg:#0C0A0B;
+  --bg2:#141012;
+  --card:#1B1517;
+  --line:rgba(238,180,152,.16);
+  --rose:#EFB59B;
+  --rose-hi:#FBDCC8;
+  --rose-deep:#D98E70;
+  --grad:linear-gradient(115deg,#FBDCC8 0%,#EFB59B 45%,#D98E70 100%);
+  --txt:#F4EDE8;
+  --dim:#B7A9A1;
+  --on-rose:#2B1509;
+  --wa:#25D366;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+  line-height:1.65;overflow-x:hidden;
+}
+.disp{
+  font-family:'MiSans Heavy','PingFang SC',sans-serif;
+  font-weight:900;font-style:italic;transform:skewX(-3deg);
+  letter-spacing:.01em;
+}
+.gold{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px;}
+section{padding:52px 0;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;padding:44px 0 0;overflow:hidden;
+  background:
+    radial-gradient(ellipse 90% 55% at 78% 8%,rgba(239,181,155,.14),transparent 60%),
+    radial-gradient(ellipse 70% 45% at 12% 88%,rgba(217,142,112,.08),transparent 60%),
+    var(--bg);
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--line);border-radius:100px;
+  padding:7px 16px;font-size:13px;color:var(--rose);
+  background:rgba(239,181,155,.07);letter-spacing:.05em;
+}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grad);}
+.hero h1{
+  font-size:clamp(46px,13vw,72px);line-height:1.08;margin:20px 0 6px;
+}
+.hero .h1sub{
+  font-size:clamp(21px,5.6vw,30px);line-height:1.3;margin-bottom:16px;color:var(--txt);
+}
+.hero p.lead{color:var(--dim);font-size:16px;max-width:32em;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 4px;}
+.chip{
+  font-size:13px;padding:7px 13px;border-radius:8px;
+  background:var(--card);border:1px solid var(--line);color:var(--txt);white-space:nowrap;
+}
+.chip b{color:var(--rose);font-weight:700;}
+.hero-photo{
+  display:block;margin:10px auto 0;width:min(320px,72%);
+  filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));
+  -webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);
+}
+.hero-cta-row{position:relative;z-index:2;margin-top:-34px;padding-bottom:40px;text-align:center;}
+
+/* ---------- CTA button ---------- */
+.btn-wa{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--grad);color:var(--on-rose);text-decoration:none;
+  font-size:17px;font-weight:800;letter-spacing:.02em;
+  padding:16px 34px;border-radius:14px;
+  box-shadow:0 10px 30px rgba(239,181,155,.28);
+  transition:transform .15s ease;
+}
+.btn-wa:active{transform:scale(.97);}
+.btn-wa svg{width:21px;height:21px;flex:none;}
+.btn-note{margin-top:10px;font-size:13px;color:var(--dim);}
+
+/* ---------- section headers ---------- */
+.sec-tag{font-size:13px;letter-spacing:.28em;color:var(--rose-deep);margin-bottom:10px;text-transform:uppercase;}
+h2{font-size:clamp(26px,7vw,34px);line-height:1.25;margin-bottom:26px;}
+
+/* ---------- pain ---------- */
+.pain{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.pain-list{display:grid;gap:12px;}
+.pain-item{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+}
+.pain-item .x{
+  flex:none;width:26px;height:26px;border-radius:8px;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(217,142,112,.14);color:var(--rose);font-weight:900;font-size:14px;
+}
+.pain-item p{font-size:15px;}
+.pain-item p b{color:var(--rose-hi);}
+
+/* ---------- offer ---------- */
+.offer-list{display:grid;gap:14px;counter-reset:offer;}
+.offer-item{
+  position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:20px 20px 18px 64px;
+}
+.offer-item::before{
+  counter-increment:offer;content:counter(offer,decimal-leading-zero);
+  position:absolute;left:20px;top:20px;
+  font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
+  font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.offer-item h3{font-size:17px;margin-bottom:5px;color:var(--rose-hi);}
+.offer-item p{font-size:14.5px;color:var(--dim);}
+.offer-item .tag{
+  display:inline-block;margin-top:8px;font-size:12px;font-weight:700;
+  color:var(--rose);border:1px solid var(--line);border-radius:6px;padding:3px 9px;
+  background:rgba(239,181,155,.06);
+}
+
+/* ---------- stats ---------- */
+.stats{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(ellipse 80% 100% at 50% 0%,rgba(239,181,155,.08),transparent 70%),
+    var(--bg2);
+}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 16px;text-align:center;
+}
+.stat .num{font-size:clamp(30px,8vw,40px);line-height:1.1;display:block;}
+.stat .lbl{font-size:13px;color:var(--dim);margin-top:6px;display:block;}
+
+/* ---------- fit ---------- */
+.fit-grid{display:grid;gap:14px;}
+.fit-card{border-radius:16px;padding:22px 20px;border:1px solid var(--line);}
+.fit-yes{background:linear-gradient(160deg,rgba(239,181,155,.10),rgba(239,181,155,.03));}
+.fit-no{background:var(--card);}
+.fit-card h3{font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.fit-yes h3{color:var(--rose-hi);}
+.fit-no h3{color:var(--dim);}
+.fit-card ul{list-style:none;display:grid;gap:10px;}
+.fit-card li{font-size:14.5px;padding-left:26px;position:relative;color:var(--txt);}
+.fit-no li{color:var(--dim);}
+.fit-yes li::before{content:'✓';position:absolute;left:0;color:var(--rose);font-weight:900;}
+.fit-no li::before{content:'✕';position:absolute;left:0;color:#6E5F58;font-weight:900;}
+
+/* ---------- final ---------- */
+.final{
+  text-align:center;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 100%,rgba(239,181,155,.13),transparent 65%),
+    var(--bg);
+}
+.final .motto{
+  font-size:clamp(22px,6.4vw,30px);line-height:1.4;margin-bottom:8px;
+}
+.final .motto small{display:block;font-size:.62em;color:var(--dim);font-style:normal;transform:none;font-family:inherit;font-weight:400;margin-top:10px;letter-spacing:.04em;}
+.final .btn-wa{margin-top:26px;}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:26px 0 96px;text-align:center;}
+footer .ig{color:var(--rose);text-decoration:none;font-weight:700;font-size:14px;}
+footer .cr{font-size:12.5px;color:var(--dim);margin-top:8px;}
+footer .dis{font-size:11.5px;color:#6E625B;margin-top:14px;line-height:1.7;max-width:36em;margin-left:auto;margin-right:auto;}
+
+/* ---------- floating WA ---------- */
+.float-wa{
+  position:fixed;right:16px;bottom:16px;z-index:50;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--wa);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(37,211,102,.4);
+}
+.float-wa svg{width:30px;height:30px;}
+
+@media(min-width:560px){
+  .fit-grid{grid-template-columns:1fr 1fr;}
+  .stats-grid{grid-template-columns:repeat(4,1fr);}
+  .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;align-items:end;gap:0;}
+  .hero-photo{width:100%;margin:0;}
+  .hero .h1sub{font-size:26px;}
+  .hero-cta-row{text-align:left;margin-top:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="badge">马来西亚合格认证交易员</span>
+      <h1 class="disp gold">陪跑计划</h1>
+      <div class="h1sub disp">1对1带你<span class="gold">建立自己的交易系统</span></div>
+      <p class="lead">不卖信号,不叫你跟单。LIVE 实盘手把手教,从第一单开始陪着你,直到你能独立交易。</p>
+      <div class="chips">
+        <span class="chip"><b>1对1</b> 陪跑</span>
+        <span class="chip"><b>LIVE</b> 实盘带盘</span>
+        <span class="chip">超低止损 <b>40点</b></span>
+        <span class="chip">专属学习 <b>App</b></span>
+      </div>
+    </div>
+    <img class="hero-photo" src="assets/joyce.webp" alt="Joyce 高冷悦姐 — 马来西亚合格认证交易员" width="323" height="758">
+  </div>
+  <div class="wrap hero-cta-row">
+    <a class="btn-wa" href="https://wa.me/601162206885?text=%E4%BD%A0%E5%A5%BD%20Joyce%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E9%99%AA%E8%B7%91%E8%AE%A1%E5%88%92" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4Z"/></svg>
+      WhatsApp 了解陪跑计划
+    </a>
+    <p class="btn-note">点击直达 Joyce 的 WhatsApp,当天回复</p>
+  </div>
+</header>
+
+<!-- ================= PAIN ================= -->
+<section class="pain">
+  <div class="wrap">
+    <p class="sec-tag">PAIN POINTS</p>
+    <h2 class="disp">你是不是也<span class="gold">这样?</span></h2>
+    <div class="pain-list">
+      <div class="pain-item"><span class="x">✕</span><p>跟过信号群 —— <b>别人赚,你亏</b>,群解散了你还是不会交易</p></div>
+      <div class="pain-item"><span class="x">✕</span><p>YouTube 看了几十个小时,真金白银时<b>还是不敢下单、乱下单</b></p></div>
+      <div class="pain-item"><span class="x">✕</span><p>要上班/上课,<b>没时间盯盘</b>,永远错过进场点</p></div>
+      <div class="pain-item"><span class="x">✕</span><p>亏了不知道为什么亏,赚了也不知道为什么赚 —— <b>没有自己的系统</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFER ================= -->
+<section>
+  <div class="wrap">
+    <p class="sec-tag">THE PLAN</p>
+    <h2 class="disp">加入陪跑计划<br>你会得到<span class="gold">什么</span></h2>
+    <div class="offer-list">
+      <div class="offer-item">
+        <h3>1对1 陪跑</h3>
+        <p>从开户、第一单到独立交易,一对一带着走,问题当天有人答。</p>
+        <span class="tag">陪跑到你独立交易为止</span>
+      </div>
+      <div class="offer-item">
+        <h3>LIVE 实盘带盘</h3>
+        <p>早盘盘前提醒 + 午盘、晚盘 LIVE 实盘。不讲空理论,直接在真实行情里教你怎么看、怎么进。</p>
+        <span class="tag">以实战为主</span>
+      </div>
+      <div class="offer-item">
+        <h3>全马超低止损策略 · 40点</h3>
+        <p>每一单止损固定 40 点,风险先锁死;盈亏比 1:1 起,亏小赚大,不靠扛单。</p>
+        <span class="tag">纪律优先</span>
+      </div>
+      <div class="offer-item">
+        <h3>精准入场点</h3>
+        <p>一套胜率高达8成的进场逻辑,教你等对位置再出手,而不是凭感觉下单。</p>
+        <span class="tag">主攻黄金 XAUUSD</span>
+      </div>
+      <div class="offer-item">
+        <h3>专属学习 App</h3>
+        <p>A–Z 完整技术课程,错过 LIVE 随时补课,上班上课也跟得上进度。</p>
+        <span class="tag">随时随地学</span>
+      </div>
+      <div class="offer-item">
+        <h3>专属 VIP 群带你交易</h3>
+        <p>进 VIP 群跟着节奏走,另送交易赠金 Credit Bonus,可返佣。</p>
+        <span class="tag">Credit Bonus · 可返佣</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><span class="num disp gold">4年</span><span class="lbl">实战交易经验</span></div>
+      <div class="stat"><span class="num disp gold">1000+</span><span class="lbl">社区学员</span></div>
+      <div class="stat"><span class="num disp gold">3个月</span><span class="lbl">培养成合格交易员</span></div>
+      <div class="stat"><span class="num disp gold">XAUUSD</span><span class="lbl">主攻黄金</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIT ================= -->
+<section>
+  <div class="wrap">
+    <p class="sec-tag">WHO IS IT FOR</p>
+    <h2 class="disp">这个计划<span class="gold">适合谁</span></h2>
+    <div class="fit-grid">
+      <div class="fit-card fit-yes">
+        <h3>✓ 适合你,如果你是</h3>
+        <ul>
+          <li>认真想学技术的大学生</li>
+          <li>想靠自己判断进出场的上班族</li>
+          <li>被信号群伤过、想真正学会的人</li>
+          <li>愿意跟纪律、守止损的人</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no">
+        <h3>✕ 不适合,如果你</h3>
+        <ul>
+          <li>想一夜暴富、抱着赌一把的心态</li>
+          <li>只想抄单,不想学会自己交易</li>
+          <li>不愿意设止损、喜欢扛单</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap">
+    <p class="motto disp">只收<span class="gold">认真想改变</span>的人<small>陪跑到你独立交易为止</small></p>
+    <a class="btn-wa" href="https://wa.me/601162206885?text=%E4%BD%A0%E5%A5%BD%20Joyce%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E9%99%AA%E8%B7%91%E8%AE%A1%E5%88%92" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4Z"/></svg>
+      WhatsApp 咨询 Joyce
+    </a>
+    <p class="btn-note">名额有限时会提前告知 · 不强推销</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="ig" href="https://www.instagram.com/joycelimmxy__" target="_blank" rel="noopener">IG @joycelimmxy__</a>
+    <p class="cr">© 2026 Joyce 高冷悦姐 · 马来西亚合格认证交易员</p>
+    <p class="dis">DISCLAIMER: 本页面内容仅供教育与资讯用途,不构成任何投资建议。外汇与差价合约交易涉及风险,过往表现不代表未来结果,请自行评估风险承受能力。</p>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/601162206885?text=%E4%BD%A0%E5%A5%BD%20Joyce%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E9%99%AA%E8%B7%91%E8%AE%A1%E5%88%92" target="_blank" rel="noopener" aria-label="WhatsApp 咨询">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4Z"/></svg>
+</a>
+
+</body>
+</html>
