@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>陪跑计划 · 1对1带你建立自己的交易系统 | Joyce 高冷悦姐</title>
-<meta name="description" content="马来西亚合格认证交易员 Joyce 高冷悦姐 · 陪跑计划:1对1陪跑 + LIVE实盘带盘 + 专属学习App,陪跑到你独立交易为止。">
+<meta name="description" content="马来西亚合格认证交易员 Joyce 高冷悦姐 · 陪跑计划:1对1陪跑 + 每天LIVE实盘带盘 + 专属学习App,陪跑到你独立交易为止。">
 <meta property="og:title" content="陪跑计划 · 1对1带你建立自己的交易系统">
-<meta property="og:description" content="不卖信号,不叫你跟单。LIVE 实盘手把手教,陪跑到你独立交易为止。">
+<meta property="og:description" content="不卖信号,不叫你跟单。每天 LIVE 实盘手把手教,陪跑到你独立交易为止。">
 <!-- Meta Pixel: 需要时把 pixel 代码贴在这里 -->
 <style>
 @font-face{
@@ -15,19 +15,19 @@
   font-weight:900;font-display:swap;
 }
 :root{
-  --bg:#0D0B0C;
-  --bg2:#131013;
+  --bg:#0A0B10;
+  --bg2:#0E1016;
   --card:rgba(255,255,255,.035);
-  --glass:rgba(24,18,20,.72);
-  --line:rgba(239,181,155,.14);
-  --line-hi:rgba(239,181,155,.38);
-  --rose:#EFB59B;
-  --rose-hi:#FBDCC8;
-  --rose-deep:#D98E70;
-  --grad:linear-gradient(115deg,#FBDCC8 0%,#EFB59B 45%,#D98E70 100%);
-  --txt:#F4EDE8;
-  --dim:#AF9F97;
-  --on-rose:#2B1509;
+  --line:rgba(178,198,232,.13);
+  --line-hi:rgba(192,212,246,.34);
+  --ice:#9CC3F0;
+  --plat:#DCE7F5;
+  --plat-hi:#FFFFFF;
+  --grad:linear-gradient(115deg,#FFFFFF 0%,#DCE7F5 42%,#9EB9DC 100%);
+  --txt:#F1F4F9;
+  --dim:#9AA3B5;
+  --on-plat:#0B1220;
+  --live:#FF4D5E;
   --wa:#25D366;
   --ease:cubic-bezier(.16,1,.3,1);
 }
@@ -62,25 +62,33 @@ nav{
   border-bottom:1px solid transparent;
 }
 nav.scrolled{
-  background:rgba(13,11,12,.72);
+  background:rgba(10,11,16,.72);
   -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
   border-bottom-color:var(--line);
 }
 .nav-in{
   max-width:720px;margin:0 auto;padding:14px 24px;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
-.logo{font-size:15px;letter-spacing:.14em;text-decoration:none;}
+.logo{font-size:15px;letter-spacing:.14em;text-decoration:none;margin-right:auto;}
 .logo b{color:var(--txt);font-weight:800;}
-.logo span{color:var(--rose);}
+.logo span{color:var(--ice);}
+.nav-ig{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line-hi);color:var(--plat);
+  transition:transform .2s var(--ease),border-color .2s;cursor:pointer;
+}
+.nav-ig:hover{transform:translateY(-1px);border-color:var(--plat);}
+.nav-ig svg{width:17px;height:17px;}
 .nav-wa{
   display:inline-flex;align-items:center;gap:7px;
-  font-size:13px;font-weight:700;color:var(--on-rose);text-decoration:none;
+  font-size:13px;font-weight:700;color:var(--on-plat);text-decoration:none;
   background:var(--grad);padding:8px 16px;border-radius:100px;
   transition:transform .2s var(--ease),box-shadow .2s;
   cursor:pointer;
 }
-.nav-wa:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(239,181,155,.35);}
+.nav-wa:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(156,195,240,.35);}
 .nav-wa:active{transform:scale(.96);}
 .nav-wa svg{width:15px;height:15px;}
 
@@ -89,9 +97,9 @@ nav.scrolled{
   position:absolute;border-radius:50%;filter:blur(70px);
   pointer-events:none;will-change:transform;
 }
-.blob.b1{width:420px;height:420px;top:-140px;right:-120px;background:rgba(239,181,155,.13);animation:drift1 22s ease-in-out infinite alternate;}
-.blob.b2{width:340px;height:340px;bottom:6%;left:-160px;background:rgba(217,142,112,.10);animation:drift2 28s ease-in-out infinite alternate;}
-.blob.b3{width:260px;height:260px;top:38%;right:-90px;background:rgba(251,220,200,.07);animation:drift3 34s ease-in-out infinite alternate;}
+.blob.b1{width:420px;height:420px;top:-140px;right:-120px;background:rgba(120,160,255,.13);animation:drift1 22s ease-in-out infinite alternate;}
+.blob.b2{width:340px;height:340px;bottom:6%;left:-160px;background:rgba(140,110,255,.10);animation:drift2 28s ease-in-out infinite alternate;}
+.blob.b3{width:260px;height:260px;top:38%;right:-90px;background:rgba(220,231,245,.06);animation:drift3 34s ease-in-out infinite alternate;}
 @keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,50px) scale(1.15)}}
 @keyframes drift2{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,-40px) scale(1.1)}}
 @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(-40px,-60px)}}
@@ -101,26 +109,24 @@ nav.scrolled{
   position:relative;overflow:hidden;
   padding:118px 0 0;
   background:
-    radial-gradient(ellipse 100% 60% at 80% 0%,rgba(239,181,155,.09),transparent 60%),
+    radial-gradient(ellipse 100% 60% at 80% 0%,rgba(140,175,240,.10),transparent 60%),
     var(--bg);
 }
 .hero-grid{position:relative;z-index:2;}
 .badge{
   display:inline-flex;align-items:center;gap:8px;
   border:1px solid var(--line-hi);border-radius:100px;
-  padding:7px 16px;font-size:12.5px;color:var(--rose);
-  background:rgba(239,181,155,.06);letter-spacing:.08em;
+  padding:7px 16px;font-size:12.5px;color:var(--plat);
+  background:rgba(156,195,240,.06);letter-spacing:.08em;
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
 }
 .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grad);
-  box-shadow:0 0 8px rgba(239,181,155,.9);animation:pulse 2.4s ease-in-out infinite;}
+  box-shadow:0 0 8px rgba(220,231,245,.9);animation:pulse 2.4s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .hero h1{
   font-size:clamp(52px,15vw,78px);line-height:1.04;margin:22px 0 4px;
   transform:skewX(-3deg);
 }
-.hero h1 .line{display:block;overflow:hidden;}
-.hero h1 .line>span{display:inline-block;}
 .h1sub{
   font-size:clamp(20px,5.4vw,27px);line-height:1.35;margin-bottom:16px;
   transform:skewX(-3deg);
@@ -128,17 +134,22 @@ nav.scrolled{
 p.lead{color:var(--dim);font-size:15.5px;max-width:30em;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;}
 .chip{
+  display:inline-flex;align-items:center;gap:7px;
   font-size:13px;padding:8px 14px;border-radius:100px;
   background:var(--card);border:1px solid var(--line);color:var(--txt);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
 }
-.chip b{color:var(--rose);font-weight:700;}
+.chip b{color:var(--ice);font-weight:700;}
+.chip .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--live);
+  box-shadow:0 0 8px rgba(255,77,94,.8);animation:pulse 1.6s ease-in-out infinite;
+}
 
-/* hero photo — 半身像,右侧+底部渐隐融入背景 */
+/* hero photo */
 .hero-visual{position:relative;margin:8px auto 0;width:min(300px,66%);}
 .hero-visual::before{
   content:'';position:absolute;inset:8% -12% -4% -12%;border-radius:50%;
-  background:radial-gradient(ellipse at 50% 42%,rgba(239,181,155,.16),transparent 68%);
+  background:radial-gradient(ellipse at 50% 42%,rgba(156,195,240,.16),transparent 68%);
   filter:blur(24px);
 }
 .hero-photo{
@@ -147,41 +158,52 @@ p.lead{color:var(--dim);font-size:15.5px;max-width:30em;}
   mask-image:linear-gradient(to bottom,#000 68%,transparent 98%);
   filter:drop-shadow(0 18px 40px rgba(0,0,0,.5));
 }
-/* K线折线背景 */
+/* 折线背景:压低+调淡,只垫在 hero 最底部,不与 CTA 交叉 */
 .spark{
-  position:absolute;left:0;right:0;bottom:0;width:100%;height:180px;
-  z-index:1;opacity:.5;pointer-events:none;
+  position:absolute;left:0;right:0;bottom:-4px;width:100%;height:110px;
+  z-index:0;opacity:.3;pointer-events:none;
 }
 .spark path.l{fill:none;stroke:url(#sparkgrad);stroke-width:2;
   stroke-dasharray:1200;stroke-dashoffset:1200;}
 .spark path.f{fill:url(#sparkfill);opacity:0;}
-.hero-cta{position:relative;z-index:3;margin-top:-20px;padding-bottom:34px;text-align:center;}
+.hero-cta{position:relative;z-index:3;margin-top:14px;padding-bottom:52px;text-align:center;}
 
 /* ---------- CTA button ---------- */
 .btn-wa{
   position:relative;overflow:hidden;
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--grad);color:var(--on-rose);text-decoration:none;
+  background:var(--grad);color:var(--on-plat);text-decoration:none;
   font-size:16.5px;font-weight:800;letter-spacing:.02em;
   padding:17px 36px;border-radius:100px;cursor:pointer;
-  box-shadow:0 12px 36px rgba(239,181,155,.30),inset 0 1px 0 rgba(255,255,255,.5);
+  box-shadow:0 12px 36px rgba(156,195,240,.28),inset 0 1px 0 rgba(255,255,255,.7);
   transition:transform .25s var(--ease),box-shadow .25s;
 }
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(239,181,155,.42),inset 0 1px 0 rgba(255,255,255,.5);}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(156,195,240,.4),inset 0 1px 0 rgba(255,255,255,.7);}
 .btn-wa:active{transform:scale(.97);}
 .btn-wa svg{width:20px;height:20px;flex:none;}
 .btn-wa::after{
   content:'';position:absolute;top:0;left:-80%;width:45%;height:100%;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.6),transparent);
   transform:skewX(-20deg);animation:shine 3.6s var(--ease) infinite;
 }
 @keyframes shine{0%,55%{left:-80%}85%,100%{left:140%}}
-.btn-note{margin-top:11px;font-size:12.5px;color:var(--dim);letter-spacing:.03em;}
+.btn-ghost{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1px solid var(--line-hi);color:var(--plat);text-decoration:none;
+  font-size:15px;font-weight:700;padding:15px 30px;border-radius:100px;cursor:pointer;
+  background:rgba(156,195,240,.05);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:transform .25s var(--ease),border-color .25s;
+}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--plat);}
+.btn-ghost:active{transform:scale(.97);}
+.btn-ghost svg{width:18px;height:18px;}
+.btn-note{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.03em;}
 
 /* ---------- marquee ---------- */
 .marquee{
   overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(239,181,155,.05),rgba(239,181,155,.02));
+  background:linear-gradient(180deg,rgba(156,195,240,.05),rgba(156,195,240,.02));
   padding:13px 0;position:relative;z-index:2;
 }
 .marquee-track{
@@ -191,21 +213,21 @@ p.lead{color:var(--dim);font-size:15.5px;max-width:30em;}
 .marquee-track span{
   font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
   font-size:14px;letter-spacing:.12em;white-space:nowrap;padding:0 18px;
-  color:var(--rose);opacity:.85;
+  color:var(--plat);opacity:.85;
 }
-.marquee-track span i{font-style:normal;color:var(--rose-deep);padding-right:36px;opacity:.6;}
+.marquee-track span i{font-style:normal;color:var(--ice);padding-right:36px;opacity:.6;}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- section headers ---------- */
 .sec-tag{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;letter-spacing:.3em;color:var(--rose-deep);margin-bottom:14px;
+  font-size:12px;letter-spacing:.3em;color:var(--ice);margin-bottom:14px;
 }
 .sec-tag::before{content:'';width:26px;height:1px;background:var(--grad);}
 h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transform:skewX(-3deg);}
 .sec-sub{color:var(--dim);font-size:14.5px;margin-bottom:36px;}
 
-/* ---------- pain:交错时间线 ---------- */
+/* ---------- reality:交错时间线 ---------- */
 .pain{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;}
 .pain-flow{position:relative;display:grid;gap:18px;}
 .pain-flow::before{
@@ -217,22 +239,82 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
   background:var(--card);border:1px solid var(--line);border-radius:18px;
   padding:18px 20px;
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  transition:border-color .3s,transform .3s var(--ease);
+  transition:border-color .3s;
 }
 .pain-item:nth-child(even){margin-right:22px;}
-.pain-item:nth-child(odd){margin-left:44px;margin-right:0;transform:translateX(0);}
 .pain-item:hover{border-color:var(--line-hi);}
 .pain-item::before{
   content:'';position:absolute;left:-30.5px;top:24px;width:9px;height:9px;border-radius:50%;
-  background:var(--bg2);border:2px solid var(--rose-deep);
-  box-shadow:0 0 10px rgba(239,181,155,.5);
+  background:var(--bg2);border:2px solid var(--ice);
+  box-shadow:0 0 10px rgba(156,195,240,.5);
 }
 .pain-item p{font-size:14.5px;color:var(--dim);}
-.pain-item p b{color:var(--rose-hi);font-weight:700;}
+.pain-item p b{color:var(--plat-hi);font-weight:700;}
 .pain-item .q{
   font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
   font-size:16px;color:var(--txt);display:block;margin-bottom:3px;
 }
+
+/* ---------- LIVE 专区 ---------- */
+.live-sec{overflow:hidden;}
+.live-panel{
+  position:relative;overflow:hidden;border-radius:24px;
+  background:linear-gradient(150deg,rgba(156,195,240,.09),rgba(156,195,240,.02) 55%);
+  padding:30px 24px 26px;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.live-panel::before{
+  content:'';position:absolute;inset:0;border-radius:24px;padding:1px;
+  background:linear-gradient(150deg,rgba(255,255,255,.5),rgba(156,195,240,.12) 45%,rgba(140,110,255,.3));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;
+}
+.live-panel .wm{
+  position:absolute;right:-6px;top:-30px;
+  font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
+  font-size:130px;line-height:1;letter-spacing:.02em;
+  background:linear-gradient(160deg,rgba(156,195,240,.14),rgba(156,195,240,.02));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  pointer-events:none;
+}
+.live-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,77,94,.12);border:1px solid rgba(255,77,94,.4);
+  color:#FF8A94;font-weight:800;font-size:12.5px;letter-spacing:.18em;
+  padding:6px 14px;border-radius:100px;margin-bottom:14px;
+}
+.live-badge::before{
+  content:'';width:8px;height:8px;border-radius:50%;background:var(--live);
+  box-shadow:0 0 10px rgba(255,77,94,.9);animation:pulse 1.6s ease-in-out infinite;
+}
+.live-panel h3{
+  font-size:clamp(24px,6.6vw,32px);line-height:1.25;transform:skewX(-3deg);
+  margin-bottom:6px;position:relative;
+}
+.live-panel .live-sub{color:var(--dim);font-size:14px;margin-bottom:22px;position:relative;}
+.sessions{display:grid;gap:12px;position:relative;}
+.session{
+  display:flex;align-items:center;gap:16px;
+  background:rgba(10,11,16,.5);border:1px solid var(--line);border-radius:16px;
+  padding:16px 18px;
+}
+.session .t{
+  font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
+  font-size:19px;flex:none;width:64px;transform:skewX(-3deg);
+}
+.session .d{font-size:13.5px;color:var(--dim);}
+.session .d b{display:block;font-size:14.5px;color:var(--txt);font-weight:700;margin-bottom:1px;}
+.session .lv{
+  margin-left:auto;flex:none;font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  color:#FF8A94;border:1px solid rgba(255,77,94,.4);border-radius:6px;padding:3px 8px;
+  display:inline-flex;align-items:center;gap:5px;
+}
+.session .lv::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--live);animation:pulse 1.6s ease-in-out infinite;}
+.session .lv.pre{color:var(--ice);border-color:var(--line-hi);}
+.session .lv.pre::before{background:var(--ice);animation:none;}
+.live-foot{margin-top:18px;font-size:13px;color:var(--dim);position:relative;text-align:center;}
+.live-foot b{color:var(--plat);}
 
 /* ---------- offer:bento ---------- */
 .bento{display:grid;gap:14px;grid-template-columns:1fr;}
@@ -241,44 +323,41 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
   background:var(--card);
   padding:24px 22px;
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  transition:transform .35s var(--ease);
 }
-/* 渐变描边 */
 .bcard::before{
   content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
-  background:linear-gradient(150deg,rgba(251,220,200,.35),rgba(239,181,155,.08) 40%,rgba(239,181,155,.02) 70%,rgba(217,142,112,.22));
+  background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(156,195,240,.08) 40%,rgba(156,195,240,.02) 70%,rgba(140,110,255,.22));
   -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
   pointer-events:none;
 }
-/* 编号水印 */
 .bcard .no{
   position:absolute;right:10px;top:-14px;
   font-family:'MiSans Heavy','PingFang SC',sans-serif;font-style:italic;font-weight:900;
   font-size:88px;line-height:1;
-  background:linear-gradient(160deg,rgba(239,181,155,.16),rgba(239,181,155,.02));
+  background:linear-gradient(160deg,rgba(156,195,240,.15),rgba(156,195,240,.02));
   -webkit-background-clip:text;background-clip:text;color:transparent;
   pointer-events:none;
 }
 .bcard h3{
-  font-size:17.5px;margin-bottom:6px;color:var(--rose-hi);
+  font-size:17.5px;margin-bottom:6px;color:var(--plat-hi);
   display:flex;align-items:center;gap:10px;position:relative;
 }
-.bcard h3 svg{width:19px;height:19px;color:var(--rose);flex:none;}
+.bcard h3 svg{width:19px;height:19px;color:var(--ice);flex:none;}
 .bcard p{font-size:14px;color:var(--dim);position:relative;max-width:30em;}
 .bcard .tag{
   display:inline-block;margin-top:12px;font-size:11.5px;font-weight:700;letter-spacing:.04em;
-  color:var(--rose);border:1px solid var(--line);border-radius:100px;padding:4px 12px;
-  background:rgba(239,181,155,.05);position:relative;
+  color:var(--ice);border:1px solid var(--line);border-radius:100px;padding:4px 12px;
+  background:rgba(156,195,240,.05);position:relative;
 }
 .bcard.hl{
-  background:linear-gradient(150deg,rgba(239,181,155,.10),rgba(239,181,155,.02) 60%);
+  background:linear-gradient(150deg,rgba(156,195,240,.10),rgba(156,195,240,.02) 60%);
 }
 .bcard.hl::before{
-  background:linear-gradient(150deg,rgba(251,220,200,.55),rgba(239,181,155,.12) 45%,rgba(217,142,112,.4));
+  background:linear-gradient(150deg,rgba(255,255,255,.5),rgba(156,195,240,.12) 45%,rgba(140,110,255,.35));
 }
 
-/* ---------- stats:横滑 ---------- */
+/* ---------- stats ---------- */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;}
 .stats .wrap{max-width:none;padding:0;}
 .stats-rail{
@@ -308,23 +387,42 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   border:1px solid var(--line);
 }
-.fit-yes{background:linear-gradient(165deg,rgba(239,181,155,.11),rgba(239,181,155,.02));border-color:var(--line-hi);}
+.fit-yes{background:linear-gradient(165deg,rgba(156,195,240,.11),rgba(156,195,240,.02));border-color:var(--line-hi);}
 .fit-no{background:var(--card);}
 .fit-card h3{font-size:16.5px;margin-bottom:16px;display:flex;align-items:center;gap:9px;}
-.fit-yes h3{color:var(--rose-hi);}
+.fit-yes h3{color:var(--plat-hi);}
 .fit-no h3{color:var(--dim);}
 .fit-card ul{list-style:none;display:grid;gap:11px;}
 .fit-card li{font-size:14px;padding-left:27px;position:relative;color:var(--txt);}
 .fit-no li{color:var(--dim);}
-.fit-yes li::before{content:'✓';position:absolute;left:0;color:var(--rose);font-weight:900;}
-.fit-no li::before{content:'✕';position:absolute;left:0;color:#6E5F58;font-weight:900;}
+.fit-yes li::before{content:'✓';position:absolute;left:0;color:var(--ice);font-weight:900;}
+.fit-no li::before{content:'✕';position:absolute;left:0;color:#5D6472;font-weight:900;}
+
+/* ---------- IG 条 ---------- */
+.ig-strip{padding:0 0 72px;}
+.ig-card{
+  position:relative;overflow:hidden;border-radius:24px;
+  background:linear-gradient(135deg,rgba(140,110,255,.10),rgba(156,195,240,.06) 60%,rgba(255,255,255,.03));
+  border:1px solid var(--line-hi);
+  padding:28px 24px;text-align:center;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.ig-card .ig-ico{
+  width:46px;height:46px;border-radius:14px;margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--grad);color:var(--on-plat);
+}
+.ig-card .ig-ico svg{width:24px;height:24px;}
+.ig-card h3{font-size:20px;transform:skewX(-3deg);margin-bottom:4px;}
+.ig-card p{font-size:13.5px;color:var(--dim);margin-bottom:18px;}
+.ig-card .btn-ghost{padding:12px 26px;font-size:14px;}
 
 /* ---------- final ---------- */
 .final{text-align:center;overflow:hidden;padding:88px 0 80px;}
 .final .halo{
   position:absolute;left:50%;bottom:-160px;transform:translateX(-50%);
   width:560px;height:380px;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(239,181,155,.18),transparent 65%);
+  background:radial-gradient(ellipse,rgba(150,180,240,.17),transparent 65%);
   filter:blur(30px);pointer-events:none;
 }
 .final .motto{font-size:clamp(24px,7vw,34px);line-height:1.35;transform:skewX(-3deg);}
@@ -336,9 +434,9 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:28px 0 100px;text-align:center;}
-footer .ig{color:var(--rose);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.03em;}
+footer .ig{color:var(--ice);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.03em;}
 footer .cr{font-size:12px;color:var(--dim);margin-top:8px;}
-footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-width:36em;margin-left:auto;margin-right:auto;}
+footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-width:36em;margin-left:auto;margin-right:auto;}
 
 /* ---------- floating WA ---------- */
 .float-wa{
@@ -359,15 +457,20 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
 /* ---------- desktop ---------- */
 @media(min-width:600px){
   .hero{padding-top:130px;}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:12px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:12px;}
   .hero-visual{width:100%;margin:0;}
-  .hero-cta{text-align:left;margin-top:-4px;}
+  .hero .h1sub{font-size:26px;}
+  .hero-cta{text-align:left;margin-top:18px;}
   .fit-grid{grid-template-columns:1fr 1fr;}
   .bento{grid-template-columns:1fr 1fr;}
   .bcard.hl{grid-column:span 2;}
   .stats-rail{justify-content:center;overflow:visible;}
   .pain-item:nth-child(even){margin-left:110px;margin-right:0;}
   .pain-item:nth-child(odd){margin-right:110px;}
+  .sessions{grid-template-columns:1fr 1fr 1fr;}
+  .session{flex-direction:column;align-items:flex-start;gap:8px;}
+  .session .lv{margin-left:0;}
+  .live-panel{padding:36px 32px 30px;}
 }
 
 /* ---------- reduced motion ---------- */
@@ -384,6 +487,9 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
 <nav id="nav">
   <div class="nav-in">
     <a class="logo disp" href="#"><b>JOYCE</b> <span>高冷悦姐</span></a>
+    <a class="nav-ig" href="https://www.instagram.com/joycelimmxy__" target="_blank" rel="noopener" aria-label="Instagram @joycelimmxy__">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
     <a class="nav-wa" href="https://wa.me/601162206885?text=%E4%BD%A0%E5%A5%BD%20Joyce%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E9%99%AA%E8%B7%91%E8%AE%A1%E5%88%92" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4Z"/></svg>
       咨询
@@ -394,33 +500,16 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
 <!-- ================= HERO ================= -->
 <header class="hero">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <svg class="spark" viewBox="0 0 720 180" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="sparkgrad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#D98E70" stop-opacity=".1"/>
-        <stop offset=".55" stop-color="#EFB59B" stop-opacity=".55"/>
-        <stop offset="1" stop-color="#FBDCC8" stop-opacity=".95"/>
-      </linearGradient>
-      <linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#EFB59B" stop-opacity=".14"/>
-        <stop offset="1" stop-color="#EFB59B" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <path class="f" d="M0,150 L60,138 L120,144 L180,118 L240,126 L300,96 L360,106 L420,74 L480,86 L540,52 L600,60 L660,26 L720,12 L720,180 L0,180 Z"/>
-    <path class="l" d="M0,150 L60,138 L120,144 L180,118 L240,126 L300,96 L360,106 L420,74 L480,86 L540,52 L600,60 L660,26 L720,12"/>
-  </svg>
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="badge" data-hero>马来西亚合格认证交易员</span>
-      <h1 class="disp">
-        <span class="line"><span class="gold" data-hero>陪跑计划</span></span>
-      </h1>
+      <h1 class="disp"><span class="gold" data-hero>陪跑计划</span></h1>
       <div class="h1sub disp" data-hero>1对1带你<span class="gold">建立自己的</span><br>交易系统</div>
-      <p class="lead" data-hero>不卖信号,不叫你跟单。LIVE 实盘手把手教,从第一单开始陪着你,直到你能独立交易。</p>
+      <p class="lead" data-hero>不卖信号,不叫你跟单。每天 LIVE 实盘手把手教,从第一单开始陪着你,直到你能独立交易。</p>
       <div class="chips">
+        <span class="chip" data-hero><span class="dot"></span>每天 <b>LIVE</b> 带盘</span>
         <span class="chip" data-hero><b>1对1</b> 陪跑</span>
-        <span class="chip" data-hero><b>LIVE</b> 实盘带盘</span>
         <span class="chip" data-hero>超低止损 <b>40点</b></span>
         <span class="chip" data-hero>专属学习 <b>App</b></span>
       </div>
@@ -441,15 +530,15 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
 <!-- ================= MARQUEE ================= -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>LIVE 实盘带盘<i>✦</i></span><span>1对1 陪跑<i>✦</i></span><span>止损固定 40点<i>✦</i></span><span>盈亏比 1:1 起<i>✦</i></span><span>主攻 XAUUSD<i>✦</i></span><span>专属学习 APP<i>✦</i></span><span>VIP 群带你交易<i>✦</i></span>
-    <span>LIVE 实盘带盘<i>✦</i></span><span>1对1 陪跑<i>✦</i></span><span>止损固定 40点<i>✦</i></span><span>盈亏比 1:1 起<i>✦</i></span><span>主攻 XAUUSD<i>✦</i></span><span>专属学习 APP<i>✦</i></span><span>VIP 群带你交易<i>✦</i></span>
+    <span>每天 LIVE 带盘<i>✦</i></span><span>1对1 陪跑<i>✦</i></span><span>止损固定 40点<i>✦</i></span><span>盈亏比 1:1 起<i>✦</i></span><span>主攻 XAUUSD<i>✦</i></span><span>专属学习 APP<i>✦</i></span><span>VIP 群带你交易<i>✦</i></span>
+    <span>每天 LIVE 带盘<i>✦</i></span><span>1对1 陪跑<i>✦</i></span><span>止损固定 40点<i>✦</i></span><span>盈亏比 1:1 起<i>✦</i></span><span>主攻 XAUUSD<i>✦</i></span><span>专属学习 APP<i>✦</i></span><span>VIP 群带你交易<i>✦</i></span>
   </div>
 </div>
 
-<!-- ================= PAIN ================= -->
+<!-- ================= REALITY ================= -->
 <section class="pain">
   <div class="wrap">
-    <p class="sec-tag" data-reveal>PAIN POINTS</p>
+    <p class="sec-tag" data-reveal>REALITY CHECK</p>
     <h2 class="disp" data-reveal>你是不是也<span class="gold">这样?</span></h2>
     <p class="sec-sub" data-reveal>90% 想学交易的人,都卡在同样的地方。</p>
     <div class="pain-flow">
@@ -461,8 +550,41 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
   </div>
 </section>
 
+<!-- ================= DAILY LIVE ================= -->
+<section class="live-sec">
+  <div class="wrap">
+    <p class="sec-tag" data-reveal>DAILY LIVE</p>
+    <h2 class="disp" data-reveal>每天 <span class="gold">LIVE 实盘</span>带你交易</h2>
+    <p class="sec-sub" data-reveal>不是录播课 —— 是每天在真实行情里,带你看盘、进场、守纪律。</p>
+    <div class="live-panel" data-reveal>
+      <span class="wm">LIVE</span>
+      <span class="live-badge">LIVE EVERYDAY</span>
+      <h3 class="disp">早/午/晚盘 <span class="gold">全时段覆盖</span></h3>
+      <p class="live-sub">上班上课都跟得上 —— 错过 LIVE,App 里随时补课。</p>
+      <div class="sessions">
+        <div class="session">
+          <span class="t disp gold">早盘</span>
+          <span class="d"><b>盘前提醒</b>开盘前给你当天关注位</span>
+          <span class="lv pre">提醒</span>
+        </div>
+        <div class="session">
+          <span class="t disp gold">午盘</span>
+          <span class="d"><b>LIVE 实盘</b>直播看盘,讲进场逻辑</span>
+          <span class="lv">LIVE</span>
+        </div>
+        <div class="session">
+          <span class="t disp gold">晚盘</span>
+          <span class="d"><b>LIVE 实盘</b>黄金主战场,手把手带</span>
+          <span class="lv">LIVE</span>
+        </div>
+      </div>
+      <p class="live-foot">以实战为主,不讲空理论 —— <b>看着我怎么做,再自己做</b></p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= OFFER ================= -->
-<section>
+<section style="padding-top:0">
   <div class="wrap">
     <p class="sec-tag" data-reveal>THE PLAN</p>
     <h2 class="disp" data-reveal>加入陪跑计划<br>你会得到<span class="gold">什么</span></h2>
@@ -476,9 +598,9 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
       </div>
       <div class="bcard" data-reveal>
         <span class="no">02</span>
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>LIVE 实盘带盘</h3>
-        <p>早盘盘前提醒 + 午盘、晚盘 LIVE。在真实行情里教你怎么看、怎么进。</p>
-        <span class="tag">以实战为主</span>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>每天 LIVE 带盘</h3>
+        <p>早盘提醒 + 午盘、晚盘 LIVE 实盘,全时段覆盖,以实战为主。</p>
+        <span class="tag">LIVE EVERYDAY</span>
       </div>
       <div class="bcard" data-reveal>
         <span class="no">03</span>
@@ -552,6 +674,23 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
   </div>
 </section>
 
+<!-- ================= INSTAGRAM ================= -->
+<div class="ig-strip">
+  <div class="wrap">
+    <div class="ig-card" data-reveal>
+      <span class="ig-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </span>
+      <h3 class="disp">先看看我的<span class="gold">日常</span></h3>
+      <p>盘面分享 · 交易日常 · 学员互动,都在 Instagram</p>
+      <a class="btn-ghost" href="https://www.instagram.com/joycelimmxy__" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        关注 @joycelimmxy__
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ================= FINAL CTA ================= -->
 <section class="final">
   <div class="halo"></div>
@@ -603,15 +742,12 @@ footer .dis{font-size:11px;color:#6E625B;margin-top:14px;line-height:1.7;max-wid
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
-  var EASE='expo.out';
 
   /* hero 入场 */
-  var tl=gsap.timeline({defaults:{ease:EASE}});
+  var tl=gsap.timeline({defaults:{ease:'expo.out'}});
   tl.from('[data-hero]',{opacity:0,y:26,duration:.9,stagger:.09})
     .from('[data-hero-photo]',{opacity:0,x:36,scale:.95,duration:1.1},'-=.7')
-    .from('[data-hero-cta]',{opacity:0,y:20,duration:.8,stagger:.1},'-=.6')
-    .to('.spark path.l',{strokeDashoffset:0,duration:2.2,ease:'power2.inOut'},'-=1.0')
-    .to('.spark path.f',{opacity:1,duration:1.2,ease:'power1.out'},'-=1.2');
+    .from('[data-hero-cta]',{opacity:0,y:20,duration:.8,stagger:.1},'-=.6');
 
   /* 视差:hero 照片轻微上浮 */
   gsap.to('[data-hero-photo]',{
