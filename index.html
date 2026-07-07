@@ -818,6 +818,10 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
       <input id="f-name" name="称呼" type="text" required maxlength="30" placeholder="例:Wei Ling" autocomplete="name">
     </div>
     <div class="field">
+      <label for="f-age">年龄?<i>*</i></label>
+      <input id="f-age" name="年龄" type="text" inputmode="numeric" required maxlength="3" placeholder="例:25">
+    </div>
+    <div class="field">
       <label for="f-role">你目前的身份?<i>*</i></label>
       <select id="f-role" name="身份" required>
         <option value="" disabled selected>请选择</option>
@@ -889,10 +893,11 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var name=document.getElementById('f-name').value.trim();
+    var age=document.getElementById('f-age').value.trim();
     var role=document.getElementById('f-role').value;
     var exp=document.getElementById('f-exp').value;
     var fund=document.getElementById('f-fund').value.trim();
-    var msg='你好 Joyce,我想了解陪跑计划\n称呼:'+name+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund;
+    var msg='你好 Joyce,我想了解陪跑计划\n称呼:'+name+'\n年龄:'+age+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
   });
