@@ -363,17 +363,29 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
 /* ---------- 学员反馈 ---------- */
 .fb{background:var(--bg);overflow:hidden;}
 .fb-rail{
-  display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;
-  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;align-items:flex-start;
+  display:grid;grid-template-columns:1fr;gap:14px;padding:6px 0 4px;
 }
-.fb-rail::-webkit-scrollbar{display:none;}
 .fb-card{
-  flex:0 0 82%;max-width:320px;scroll-snap-align:start;
   position:relative;border-radius:20px;overflow:hidden;
   background:var(--card);padding:12px 12px 14px;
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
 }
+.fb-card .imgwrap{position:relative;border-radius:12px;overflow:hidden;}
+.fb-card.tall .imgwrap{max-height:300px;transition:max-height .5s var(--ease);}
+.fb-card.tall .imgwrap::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:90px;
+  background:linear-gradient(to bottom,transparent,rgba(14,16,22,.94));
+  pointer-events:none;transition:opacity .4s;
+}
+.fb-card.tall.open .imgwrap{max-height:1100px;}
+.fb-card.tall.open .imgwrap::after{opacity:0;}
+.fb-more{
+  position:relative;display:block;width:100%;margin-top:10px;
+  background:rgba(156,195,240,.07);border:1px solid var(--line-hi);
+  color:var(--ice);font-size:13px;font-weight:700;font-family:inherit;
+  padding:10px 0;border-radius:100px;cursor:pointer;letter-spacing:.04em;
+}
+.fb-card.open .fb-more{display:none;}
 .fb-card::before{
   content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
   background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(156,195,240,.08) 40%,rgba(140,110,255,.22));
@@ -381,7 +393,7 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
   -webkit-mask-composite:xor;mask-composite:exclude;
   pointer-events:none;
 }
-.fb-card img{width:100%;height:auto;border-radius:12px;display:block;position:relative;}
+.fb-card img{width:100%;height:auto;display:block;position:relative;}
 .fb-card .cap{
   display:flex;align-items:center;gap:8px;
   font-size:12.5px;color:var(--dim);margin:11px 4px 0;position:relative;
@@ -391,11 +403,8 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
   content:'';flex:none;width:6px;height:6px;border-radius:50%;
   background:var(--grad);box-shadow:0 0 8px rgba(220,231,245,.7);
 }
-.fb-hint{font-size:12px;color:var(--dim);text-align:center;margin-top:2px;letter-spacing:.05em;}
 @media(min-width:600px){
-  .fb-rail{display:grid;grid-template-columns:1fr 1fr;overflow:visible;align-items:start;}
-  .fb-card{max-width:none;}
-  .fb-hint{display:none;}
+  .fb-rail{grid-template-columns:1fr 1fr;align-items:start;}
 }
 
 /* ---------- fit ---------- */
@@ -720,24 +729,25 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
     <h2 class="disp" data-reveal>学员怎么<span class="gold">说</span></h2>
     <p class="sec-sub" data-reveal>真实 WhatsApp 聊天记录,截图为证。</p>
     <div class="fb-rail" data-reveal>
-      <div class="fb-card">
-        <img src="assets/fb1.webp" alt="学员反馈:跟着 SOP 进场,第一单就赚到" width="640" height="676" loading="lazy">
+      <div class="fb-card tall">
+        <div class="imgwrap"><img src="assets/fb1.webp" alt="学员反馈:跟着 SOP 进场,第一单就赚到" width="640" height="676" loading="lazy"></div>
+        <button type="button" class="fb-more">查看完整对话 ↓</button>
         <p class="cap"><b>“yes bro 赚到了”</b>· 跟着 SOP 的第一单</p>
       </div>
-      <div class="fb-card">
-        <img src="assets/fb4.webp" alt="学员反馈:学生党感谢 Joyce 带我入行" width="640" height="983" loading="lazy">
+      <div class="fb-card tall">
+        <div class="imgwrap"><img src="assets/fb4.webp" alt="学员反馈:学生党感谢 Joyce 带我入行" width="640" height="983" loading="lazy"></div>
+        <button type="button" class="fb-more">查看完整对话 ↓</button>
         <p class="cap"><b>“感谢 Joyce 带我入行”</b>· 学生党学员</p>
       </div>
       <div class="fb-card">
-        <img src="assets/fb2.webp" alt="学员反馈:1v1 协助很多,每天都有 hit target" width="640" height="260" loading="lazy">
+        <div class="imgwrap"><img src="assets/fb2.webp" alt="学员反馈:1v1 协助很多,每天都有 hit target" width="640" height="260" loading="lazy"></div>
         <p class="cap"><b>“每天都有 hit target”</b>· 1对1 学员</p>
       </div>
       <div class="fb-card">
-        <img src="assets/fb3.webp" alt="学员反馈:1对1真的是有用,分析连续 hit TP" width="640" height="319" loading="lazy">
+        <div class="imgwrap"><img src="assets/fb3.webp" alt="学员反馈:1对1真的是有用,分析连续 hit TP" width="640" height="319" loading="lazy"></div>
         <p class="cap"><b>“1对1真的是有用”</b>· 连续 hit TP</p>
       </div>
     </div>
-    <p class="fb-hint">左右滑动看更多 →</p>
   </div>
 </section>
 
@@ -880,6 +890,13 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
     var msg='你好 Joyce,我想了解陪跑计划\n称呼:'+name+'\n身份:'+role+'\n交易经验:'+exp;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
+  });
+
+  /* ---------- 学员反馈展开 ---------- */
+  document.querySelectorAll('.fb-more').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btn.closest('.fb-card').classList.add('open');
+    });
   });
 
   /* ---------- 动画 ---------- */
