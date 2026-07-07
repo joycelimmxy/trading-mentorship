@@ -393,8 +393,8 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
 }
 .fb-hint{font-size:12px;color:var(--dim);text-align:center;margin-top:2px;letter-spacing:.05em;}
 @media(min-width:600px){
-  .fb-rail{overflow:visible;flex-wrap:nowrap;}
-  .fb-card{flex:1 1 0;max-width:none;}
+  .fb-rail{display:grid;grid-template-columns:1fr 1fr;overflow:visible;align-items:start;}
+  .fb-card{max-width:none;}
   .fb-hint{display:none;}
 }
 
@@ -723,6 +723,10 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
       <div class="fb-card">
         <img src="assets/fb1.webp" alt="学员反馈:跟着 SOP 进场,第一单就赚到" width="640" height="676" loading="lazy">
         <p class="cap"><b>“yes bro 赚到了”</b>· 跟着 SOP 的第一单</p>
+      </div>
+      <div class="fb-card">
+        <img src="assets/fb4.webp" alt="学员反馈:学生党感谢 Joyce 带我入行" width="640" height="983" loading="lazy">
+        <p class="cap"><b>“感谢 Joyce 带我入行”</b>· 学生党学员</p>
       </div>
       <div class="fb-card">
         <img src="assets/fb2.webp" alt="学员反馈:1v1 协助很多,每天都有 hit target" width="640" height="260" loading="lazy">
