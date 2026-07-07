@@ -893,12 +893,15 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   },{passive:true});
 
   /* ---------- 资料表 modal ---------- */
+  // 换 WhatsApp 号码只改这一行,下面所有按钮链接会自动同步
+  var WA='601162206885';
   // 填好 Apps Script 部署后的 Web App URL(见部署说明),否则表单数据不会记录到 Sheet
   var SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbyWNU1Lt0-j0RELEU_RO494MwsUl52_lP2qNojkU_PhySLjng85hV-9HNF6iRKOEOgA/exec';
   var modal=document.getElementById('waModal');
   var form=document.getElementById('waForm');
-  var WA='601162206885';
+  var WA_TEXT=encodeURIComponent('你好 Joyce,我想了解陪跑计划');
   document.querySelectorAll('.js-wa').forEach(function(a){
+    a.href='https://wa.me/'+WA+'?text='+WA_TEXT;
     a.addEventListener('click',function(e){
       e.preventDefault();
       if(typeof fbq==='function')fbq('track','Contact');
