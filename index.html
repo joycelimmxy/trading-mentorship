@@ -7,7 +7,23 @@
 <meta name="description" content="马来西亚合格认证交易员 Joyce 高冷悦姐 · 陪跑计划:1对1陪跑 + 每天LIVE实盘带盘 + 专属学习App,陪跑到你独立交易为止。">
 <meta property="og:title" content="陪跑计划 · 1对1带你建立自己的交易系统">
 <meta property="og:description" content="不卖信号,不叫你跟单。每天 LIVE 实盘手把手教,陪跑到你独立交易为止。">
-<!-- Meta Pixel: 需要时把 pixel 代码贴在这里 -->
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4306450766268348');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4306450766268348&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel -->
 <style>
 @font-face{
   font-family:'MiSans Heavy';
@@ -873,12 +889,15 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   },{passive:true});
 
   /* ---------- 资料表 modal ---------- */
+  // 填好 Apps Script 部署后的 Web App URL(见部署说明),否则表单数据不会记录到 Sheet
+  var SHEET_ENDPOINT='PASTE_APPS_SCRIPT_URL_HERE';
   var modal=document.getElementById('waModal');
   var form=document.getElementById('waForm');
   var WA='601162206885';
   document.querySelectorAll('.js-wa').forEach(function(a){
     a.addEventListener('click',function(e){
       e.preventDefault();
+      if(typeof fbq==='function')fbq('track','Contact');
       modal.classList.add('open');
       document.body.style.overflow='hidden';
     });
@@ -897,6 +916,21 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
     var role=document.getElementById('f-role').value;
     var exp=document.getElementById('f-exp').value;
     var fund=document.getElementById('f-fund').value.trim();
+
+    if(typeof fbq==='function'){
+      fbq('track','Lead',{content_name:'陪跑计划资料表'});
+    }
+    if(SHEET_ENDPOINT.indexOf('PASTE_')!==0){
+      fetch(SHEET_ENDPOINT,{
+        method:'POST',mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
+        body:JSON.stringify({
+          time:new Date().toISOString(),
+          称呼:name,年龄:age,身份:role,交易经验:exp,启动资金:fund
+        })
+      }).catch(function(){});
+    }
+
     var msg='你好 Joyce,我想了解陪跑计划\n称呼:'+name+'\n年龄:'+age+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
