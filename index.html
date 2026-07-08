@@ -438,7 +438,14 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
 .fit-card ul{list-style:none;display:grid;gap:11px;}
 .fit-card li{font-size:14px;padding-left:27px;position:relative;color:var(--txt);}
 .fit-no li{color:var(--dim);}
-.fit-yes li::before{content:'✓';position:absolute;left:0;color:var(--ice);font-weight:900;}
+.fit-yes li::before{
+  content:'✓';position:absolute;left:0;top:1px;
+  color:#0B1220;font-weight:900;font-size:12px;line-height:1;
+  width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#2DE6D6;box-shadow:0 0 10px rgba(45,230,214,.6);
+}
+.fit-yes li{padding-left:30px;}
 .fit-no li::before{content:'✕';position:absolute;left:0;color:#5D6472;font-weight:900;}
 
 /* ---------- final ---------- */
@@ -899,7 +906,7 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   var SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbyWNU1Lt0-j0RELEU_RO494MwsUl52_lP2qNojkU_PhySLjng85hV-9HNF6iRKOEOgA/exec';
   var modal=document.getElementById('waModal');
   var form=document.getElementById('waForm');
-  var WA_TEXT=encodeURIComponent('你好 Joyce,我想了解陪跑计划');
+  var WA_TEXT=encodeURIComponent('你好 Joyce,我要开始陪跑计划📊');
   document.querySelectorAll('.js-wa').forEach(function(a){
     a.href='https://wa.me/'+WA+'?text='+WA_TEXT;
     a.addEventListener('click',function(e){
@@ -939,7 +946,7 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
       }).catch(function(){});
     }
 
-    var msg='你好 Joyce,我想了解陪跑计划\n称呼:'+name+'\n年龄:'+age+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund+'\n我的号码:'+phone;
+    var msg='你好 Joyce,我要开始陪跑计划📊\n称呼:'+name+'\n年龄:'+age+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund+'\n我的号码:'+phone;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
   });
