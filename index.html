@@ -907,46 +907,71 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   var modal=document.getElementById('waModal');
   var form=document.getElementById('waForm');
   var WA_TEXT=encodeURIComponent('你好 Joyce,我要开始陪跑计划📊');
+  var submitted=false; // 本次弹窗是否已按「完整提交」发送过
+
+  function readForm(){
+    return {
+      称呼:document.getElementById('f-name').value.trim(),
+      年龄:document.getElementById('f-age').value.trim(),
+      身份:document.getElementById('f-role').value,
+      交易经验:document.getElementById('f-exp').value,
+      启动资金:document.getElementById('f-fund').value.trim(),
+      电话:document.getElementById('f-phone').value.trim()
+    };
+  }
+  function sendToSheet(data,status,useBeacon){
+    if(SHEET_ENDPOINT.indexOf('PASTE_')===0)return;
+    data.time=new Date().toISOString();
+    data.状态=status;
+    var body=JSON.stringify(data);
+    if(useBeacon&&navigator.sendBeacon){
+      navigator.sendBeacon(SHEET_ENDPOINT,body);
+    }else{
+      fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:body}).catch(function(){});
+    }
+  }
+  function maybeSendPartial(useBeacon){
+    if(submitted)return; // 已经完整提交过,不用再记一笔半途的
+    var data=readForm();
+    if(data.电话.length>=6){ // 至少填到电话号码,才有意义记录(不然联系不到人)
+      sendToSheet(data,'未完成(中途放弃)',useBeacon);
+    }
+  }
+
   document.querySelectorAll('.js-wa').forEach(function(a){
     a.href='https://wa.me/'+WA+'?text='+WA_TEXT;
     a.addEventListener('click',function(e){
       e.preventDefault();
       if(typeof fbq==='function')fbq('track','Contact');
+      submitted=false;
       modal.classList.add('open');
       document.body.style.overflow='hidden';
     });
   });
   function closeModal(){
+    maybeSendPartial(false);
     modal.classList.remove('open');
     document.body.style.overflow='';
   }
   document.getElementById('waClose').addEventListener('click',closeModal);
   modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
   addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  // 手机上更常见:直接关掉分页/切走 App,不会走上面任何一个关闭按钮
+  addEventListener('pagehide',function(){
+    if(modal.classList.contains('open'))maybeSendPartial(true);
+  });
+
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=document.getElementById('f-name').value.trim();
-    var age=document.getElementById('f-age').value.trim();
-    var role=document.getElementById('f-role').value;
-    var exp=document.getElementById('f-exp').value;
-    var fund=document.getElementById('f-fund').value.trim();
-    var phone=document.getElementById('f-phone').value.trim();
+    var data=readForm();
+    submitted=true;
 
     if(typeof fbq==='function'){
       fbq('track','Lead',{content_name:'陪跑计划资料表'});
     }
-    if(SHEET_ENDPOINT.indexOf('PASTE_')!==0){
-      fetch(SHEET_ENDPOINT,{
-        method:'POST',mode:'no-cors',
-        headers:{'Content-Type':'text/plain'},
-        body:JSON.stringify({
-          time:new Date().toISOString(),
-          称呼:name,年龄:age,身份:role,交易经验:exp,启动资金:fund,电话:phone
-        })
-      }).catch(function(){});
-    }
+    sendToSheet(data,'完整提交',false);
 
-    var msg='你好 Joyce,我要开始陪跑计划📊\n称呼:'+name+'\n年龄:'+age+'\n身份:'+role+'\n交易经验:'+exp+'\n启动资金:USD '+fund+'\n我的号码:'+phone;
+    var msg='你好 Joyce,我要开始陪跑计划📊\n称呼:'+data.称呼+'\n年龄:'+data.年龄+'\n身份:'+data.身份+'\n交易经验:'+data.交易经验+'\n启动资金:USD '+data.启动资金+'\n我的号码:'+data.电话;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
   });
