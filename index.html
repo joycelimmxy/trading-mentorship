@@ -376,6 +376,37 @@ h2{font-size:clamp(28px,7.6vw,38px);line-height:1.22;margin-bottom:10px;transfor
 .stat .lbl{font-size:12.5px;color:var(--dim);margin-top:8px;display:block;letter-spacing:.05em;}
 .stats-head{max-width:720px;margin:0 auto;padding:0 24px 22px;}
 
+/* ---------- Telegram 体验卡横幅 ---------- */
+.tg-promo{padding:0 0 56px;}
+.tg-card{
+  position:relative;overflow:hidden;border-radius:22px;
+  background:linear-gradient(135deg,rgba(140,110,255,.12),rgba(156,195,240,.07) 60%,rgba(255,255,255,.03));
+  border:1px solid var(--line-hi);
+  padding:26px 24px;text-align:center;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.tg-card .tg-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11.5px;font-weight:800;letter-spacing:.14em;
+  color:var(--ice);border:1px solid var(--line-hi);border-radius:100px;
+  padding:5px 13px;margin-bottom:14px;background:rgba(156,195,240,.06);
+}
+.tg-card .tg-badge::before{content:'🎁';font-size:13px;}
+.tg-card h3{font-size:clamp(21px,5.6vw,27px);transform:skewX(-3deg);margin-bottom:8px;}
+.tg-card p{font-size:14px;color:var(--dim);margin-bottom:20px;max-width:32em;margin-left:auto;margin-right:auto;}
+.btn-tg{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(115deg,#8C6EFF,#5B8CFF);color:#fff;text-decoration:none;
+  font-size:15.5px;font-weight:800;letter-spacing:.02em;
+  padding:15px 30px;border-radius:100px;cursor:pointer;border:0;
+  box-shadow:0 10px 28px rgba(140,110,255,.28);
+  transition:transform .25s var(--ease),box-shadow .25s;
+}
+.btn-tg:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(140,110,255,.4);}
+.btn-tg:active{transform:scale(.97);}
+.btn-tg svg{width:19px;height:19px;flex:none;}
+
 /* ---------- 学员反馈 ---------- */
 .fb{background:var(--bg);overflow:hidden;}
 .fb-rail{
@@ -634,6 +665,21 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   </div>
 </div>
 
+<!-- ================= TELEGRAM 体验卡 ================= -->
+<section class="tg-promo">
+  <div class="wrap">
+    <div class="tg-card" data-reveal>
+      <span class="tg-badge">FREE TRIAL</span>
+      <h3 class="disp">送你<span class="gold">免费体验卡</span></h3>
+      <p>加入 Telegram 学习群,直接参与今晚的 LIVE 实盘,免费体验陪跑计划的教学方式,不用先付费。</p>
+      <a class="btn-tg js-tg" href="https://t.me/+gsWRMENT_YphMWQ1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 3 2 10.6c-1.3.5-1.3 1.2-.2 1.6l5 1.6 1.9 6c.2.6.4.8.9.8.4 0 .6-.2.8-.4l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8L22.5 4c.3-1.3-.5-1.8-1.5-1.3ZM8.8 13.8l9-5.7c.4-.3.8 0 .5.3l-7.3 6.6-.3 3.2z"/></svg>
+        领取体验卡 · 加入 Telegram
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= REALITY ================= -->
 <section class="pain">
   <div class="wrap">
@@ -879,6 +925,55 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
   </form>
 </div>
 
+<!-- ================= TELEGRAM 体验卡 MODAL ================= -->
+<div class="modal-bg" id="tgModal" role="dialog" aria-modal="true" aria-label="领取体验卡前小资料">
+  <form class="modal" id="tgForm">
+    <button type="button" class="close" id="tgClose" aria-label="关闭">✕</button>
+    <h3 class="disp">领取体验卡前,先让 Joyce <span class="gold">认识你</span></h3>
+    <p class="msub">30 秒填完 · 提交后直接跳转 Telegram</p>
+    <div class="field">
+      <label for="tg-name">怎么称呼你?<i>*</i></label>
+      <input id="tg-name" name="称呼" type="text" required maxlength="30" placeholder="例:Wei Ling" autocomplete="name">
+    </div>
+    <div class="field">
+      <label for="tg-age">年龄?<i>*</i></label>
+      <input id="tg-age" name="年龄" type="text" inputmode="numeric" required maxlength="3" placeholder="例:25">
+    </div>
+    <div class="field">
+      <label for="tg-role">你目前的身份?<i>*</i></label>
+      <select id="tg-role" name="身份" required>
+        <option value="" disabled selected>请选择</option>
+        <option>大学生</option>
+        <option>上班族</option>
+        <option>自雇 / 做生意</option>
+        <option>全职妈妈</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="tg-exp">交易经验?<i>*</i></label>
+      <select id="tg-exp" name="交易经验" required>
+        <option value="" disabled selected>请选择</option>
+        <option>完全没接触过</option>
+        <option>试过,但亏钱 / 没方向</option>
+        <option>有经验,想系统化</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="tg-fund">预计启动资金 (USD)?<i>*</i></label>
+      <input id="tg-fund" name="资金" type="text" inputmode="numeric" required maxlength="12" placeholder="例:1000">
+    </div>
+    <div class="field">
+      <label for="tg-phone">你的 WhatsApp 号码?<i>*</i></label>
+      <input id="tg-phone" name="电话" type="tel" inputmode="tel" required maxlength="20" placeholder="例:0123456789" autocomplete="tel">
+    </div>
+    <button type="submit" class="btn-tg">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 3 2 10.6c-1.3.5-1.3 1.2-.2 1.6l5 1.6 1.9 6c.2.6.4.8.9.8.4 0 .6-.2.8-.4l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8L22.5 4c.3-1.3-.5-1.8-1.5-1.3ZM8.8 13.8l9-5.7c.4-.3.8 0 .5.3l-7.3 6.6-.3 3.2z"/></svg>
+      领取体验卡 · 加入 Telegram
+    </button>
+    <p class="mnote">资料只用于 Joyce 了解你的情况,不会外传</p>
+  </form>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
 <script>
@@ -974,6 +1069,77 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
     var msg='你好 Joyce,我要开始陪跑计划📊\n称呼:'+data.称呼+'\n年龄:'+data.年龄+'\n身份:'+data.身份+'\n交易经验:'+data.交易经验+'\n启动资金:USD '+data.启动资金+'\n我的号码:'+data.电话;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     closeModal();
+  });
+
+  /* ---------- Telegram 体验卡 modal(独立表单,独立 Sheet,不发 WhatsApp) ---------- */
+  var TG_SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbwzb4NjE1dbDHfs2jVvsFOwWHsX2OfFHH5Vg-pzz0pagCCn9NovWaRy0XT-C7pwg1Fnog/exec';
+  var TELEGRAM_LINK='https://t.me/+gsWRMENT_YphMWQ1';
+  var tgModal=document.getElementById('tgModal');
+  var tgForm=document.getElementById('tgForm');
+  var tgSubmitted=false;
+
+  function readTgForm(){
+    return {
+      称呼:document.getElementById('tg-name').value.trim(),
+      年龄:document.getElementById('tg-age').value.trim(),
+      身份:document.getElementById('tg-role').value,
+      交易经验:document.getElementById('tg-exp').value,
+      启动资金:document.getElementById('tg-fund').value.trim(),
+      电话:document.getElementById('tg-phone').value.trim()
+    };
+  }
+  function sendTgToSheet(data,status,useBeacon){
+    if(TG_SHEET_ENDPOINT.indexOf('PASTE_')===0)return;
+    data.time=new Date().toISOString();
+    data.状态=status;
+    var body=JSON.stringify(data);
+    if(useBeacon&&navigator.sendBeacon){
+      navigator.sendBeacon(TG_SHEET_ENDPOINT,body);
+    }else{
+      fetch(TG_SHEET_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:body}).catch(function(){});
+    }
+  }
+  function maybeSendTgPartial(useBeacon){
+    if(tgSubmitted)return;
+    var data=readTgForm();
+    if(data.电话.length>=6){
+      sendTgToSheet(data,'未完成(中途放弃)',useBeacon);
+    }
+  }
+
+  document.querySelectorAll('.js-tg').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      if(typeof fbq==='function')fbq('track','Contact',{currency:'MYR',value:0,content_name:'Telegram体验卡'});
+      tgSubmitted=false;
+      tgModal.classList.add('open');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function closeTgModal(){
+    maybeSendTgPartial(false);
+    tgModal.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.getElementById('tgClose').addEventListener('click',closeTgModal);
+  tgModal.addEventListener('click',function(e){if(e.target===tgModal)closeTgModal();});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&tgModal.classList.contains('open'))closeTgModal();});
+  addEventListener('pagehide',function(){
+    if(tgModal.classList.contains('open'))maybeSendTgPartial(true);
+  });
+
+  tgForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=readTgForm();
+    tgSubmitted=true;
+
+    if(typeof fbq==='function'){
+      fbq('track','CompleteRegistration',{content_name:'Telegram体验卡'});
+    }
+    sendTgToSheet(data,'完整提交',false);
+
+    window.open(TELEGRAM_LINK,'_blank');
+    closeTgModal();
   });
 
   /* ---------- 学员反馈展开 ---------- */
