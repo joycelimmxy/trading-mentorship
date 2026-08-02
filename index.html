@@ -523,6 +523,17 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
 @keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.55);opacity:0}}
 .float-wa svg{width:30px;height:30px;}
 
+/* ---------- floating TG ---------- */
+.float-tg{
+  position:fixed;right:16px;bottom:84px;z-index:90;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(115deg,#8C6EFF,#5B8CFF);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(140,110,255,.4);
+  transition:transform .2s var(--ease);
+}
+.float-tg:active{transform:scale(.92);}
+.float-tg svg{width:28px;height:28px;}
+
 /* ---------- 资料表 modal ---------- */
 .modal-bg{
   position:fixed;inset:0;z-index:300;
@@ -871,6 +882,10 @@ footer .dis{font-size:11px;color:#5D6472;margin-top:14px;line-height:1.7;max-wid
     <p class="dis">DISCLAIMER: 本页面内容仅供教育与资讯用途,不构成任何投资建议。外汇与差价合约交易涉及风险,过往表现不代表未来结果,请自行评估风险承受能力。</p>
   </div>
 </footer>
+
+<a class="float-tg js-tg" href="https://t.me/+gsWRMENT_YphMWQ1" target="_blank" rel="noopener" aria-label="Telegram 免费体验卡">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M22 3 2 10.6c-1.3.5-1.3 1.2-.2 1.6l5 1.6 1.9 6c.2.6.4.8.9.8.4 0 .6-.2.8-.4l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8L22.5 4c.3-1.3-.5-1.8-1.5-1.3ZM8.8 13.8l9-5.7c.4-.3.8 0 .5.3l-7.3 6.6-.3 3.2z"/></svg>
+</a>
 
 <a class="float-wa js-wa" href="https://wa.me/601162206885?text=%E4%BD%A0%E5%A5%BD%20Joyce%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E9%99%AA%E8%B7%91%E8%AE%A1%E5%88%92" target="_blank" rel="noopener" aria-label="WhatsApp 咨询">
   <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4Z"/></svg>
